@@ -31,7 +31,15 @@ function App() {
       graduationYear,
       graduated,
     };
-    setStudents([newStudent, ...students]);
+    setStudents([newStudent, ...students]); // the student added(newStudent) + the students that are in json(...students)
+    // erase all data on the form
+    setFullName("");
+    setImage("");
+    setPhone("");
+    setEmail("");
+    setProgram("");
+    setGraduationYear("");
+    setGraduated("");
   }
 
   return (
@@ -135,9 +143,9 @@ function App() {
             <input
               name="graduated"
               type="checkbox"
-              checked={graduated}
+              value={graduated}
               onChange={(event) => {
-                setGraduated(event.target.value);
+                setGraduated(event.target.checked);
               }}
             />
           </label>
